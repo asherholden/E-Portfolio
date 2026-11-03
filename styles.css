@@ -530,7 +530,6 @@ projects
 
 .section__title {
     position: relative;
-    z-index: 98;
     text-align: center;
     font-size: 48px;
     margin-bottom: 60px;
@@ -700,11 +699,15 @@ Shapes
 
 
 @media ( max-width: 768px) {
+    
     .title {
         font-size: 80px;
     }
     .header__para {
         font-size: 20px;
+    }
+    .modal--open {
+        
     }
     .modal {
         top: 0;
@@ -717,6 +720,13 @@ Shapes
     .modal__half {
         width: 100%;
     }
+    .modal--open .section__title, 
+    .modal--open .project, 
+    .modal--open .mail__btn
+    {
+        visibility: hidden;
+    }
+
 }
 
 @media ( max-width: 480px) {
@@ -743,5 +753,11 @@ Shapes
     }
     .modal__half {
         padding: 40px;
+    }
+    .modal--open .section__title, 
+    .modal--open .project, 
+    .modal--open .mail__btn
+    {
+        visibility: hidden;
     }
 }
