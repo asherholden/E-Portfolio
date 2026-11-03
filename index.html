@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asher Holden</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/643dc5a81b.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js">
+      </script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "ez1nt_ubactl8IcNL",
+        });
+    })();
+  </script>
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="./assets/logo.svg" alt="" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="toggleModal()"
+              >About</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="toggleModal()"
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__contant">
+          <h1 class="title">Hey</h1>
+          <h1 class="title title--secondary blue">I'm Asher.</h1>
+          <p class="header__para">
+            I'm a <b class="blue">Frontend Developer</b> with a strong passion
+            for designing and building websites with great user experiences.
+            <br />
+            Here's a bit more <b class="blue click" onclick="toggleModal()">about me.</b>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://github.com/asherholden"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=100076526990696"
+              class="social__link click"
+              target="_blank"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-solid fa-envelope"></i>
+      </button>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>  
+
+      <div class="modal">
+        <div class="modal__half modal__about"> 
+          <h3 class="modal__title modal__title--about">Heres a bit more about me</h3>
+          <h4 class="modal__sub-title modal__sub-title--about">Frontend Web Developer</h4>
+          <p class="modal__para">
+            I am a 21 year-old <b class="blue">frontend web developer</b> with a strong passion for building websites with great <b class="blue">user experiences.</b>
+            <br>
+            I currently focus on helping businesses establish their online presence through <b class="blue">modern websites</b> and <b class="blue">simple automation</b> solutions that make running their business easier.
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/html-icon.webp" alt="HTML icon">
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/css3.webp" alt="">
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img class="modal__language--img" src="./assets/javascript.webp" alt="">
+              <span class="language__name">Javascript</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+           <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">Lets have a chat</h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">I'm currently open to new projects</h4>
+          <form id="contact__form" onsubmit="contact(event)">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input name="user_name" type="text" class="input" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input name="user_email" type="email" class="input" required></input>
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea name="message" type="text" class="input" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">Send</button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking to you soon.
+          </div>
+        </div>
+      </div>
+
+      <img src="./assets/semi circle.svg" class="shape shape--0">
+      <img src="./assets/circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/circle.svg" class="shape shape--3">
+      <img src="./assets/triangle.svg" class="shape shape--4">
+      <img src="./assets/circle.svg" class="shape shape--5">
+      <img src="./assets/squiggly.svg" class="shape shape--6">
+      <img src="./assets/circle.svg" class="shape shape--7">
+      <img src="./assets/semi circle.svg" class="shape shape--8">
+      
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            Here are some of my <span class="blue">projects</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  class="project__img"
+                  src="./assets/project-1.png"
+                  alt="Image of the laning page"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Crawl Your Own Way
+                  </h3>
+                  <h4 class="project__description--sub-title">HTML, CSS</h4>
+                  <p class="project__description--para">
+                    Designed and developed a custom website for Crawl Your Own
+                    Way, a local event business specializing in unique social
+                    crawls and experiences. The website allows visitors to
+                    explore upcoming events, view event details, purchase
+                    tickets, and learn about private crawl bookings. Integrated
+                    payment links, ticketing functionality, and contact forms to
+                    create a smooth experience for both customers and the
+                    business owner.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://github.com/asherholden"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="https://crawlyourownway.com/"
+                      class="project__description--link"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-window-maximize"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img class="footer__logo--img" src="./assets/logo.svg" alt="logo" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              GitHub
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Facebook
+            </a>
+            <a
+              href="#"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              onclick="toggleModal()"
+            >
+              Email
+            </a>
+          </div>
+          <div class="footer__copyright">Copyright © 2026 Asher Holden</div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
