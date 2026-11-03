@@ -233,7 +233,7 @@ Landing Page
 }
 
 .mail__btn {
-    z-index: 99;
+    z-index: 100;
     width: 70px;
     height: 70px;
     font-size: 32px;
@@ -247,7 +247,7 @@ Landing Page
     position: absolute;
     bottom: 32px;
     right: 40px;
-
+    
 }
 
 .scroll {
@@ -527,6 +527,9 @@ projects
 
 */
 
+.project {
+ margin-bottom: 60px;
+}
 
 .section__title {
     position: relative;
@@ -602,6 +605,21 @@ projects
     margin: 16px 0;
 }
 
+.mobile__button {
+    display: none;
+    justify-content: center;
+}
+
+.mobile__button--website {
+    z-index: 5;
+    padding: 8px;
+    border: none;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+}
 /* 
 
 
@@ -706,9 +724,6 @@ Shapes
     .header__para {
         font-size: 20px;
     }
-    .modal--open {
-        
-    }
     .modal {
         top: 0;
         left: 0;
@@ -726,7 +741,9 @@ Shapes
     {
         visibility: hidden;
     }
-
+    .mobile__button {
+        display: flex;
+    }
 }
 
 @media ( max-width: 480px) {
